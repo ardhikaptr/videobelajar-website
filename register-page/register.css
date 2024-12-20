@@ -1,0 +1,313 @@
+:root {
+	--base-font: "Lato", sans-serif;
+	--input-border-color: rgba(58, 53, 65, 0.2);
+	--font-size-mobile: 14px;
+	--font-size-desktop: 16px;
+	--color: rgba(51, 51, 51, 0.7);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--base-font);
+}
+
+html {
+	overflow-y: hidden;
+}
+
+body {
+	min-height: 100vh;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+#navbar {
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 70px;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+#platform-logo {
+	display: block;
+	margin-left: 24px;
+	width: 100%;
+}
+
+#content {
+	position: relative;
+	height: calc(100vh - 70px);
+	display: flex;
+}
+
+#login-box {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	gap: 20px;
+}
+
+label {
+	line-height: 24px;
+	color: var(--color);
+}
+
+label,
+button p,
+input,
+select {
+	font-size: var(--font-size-desktop);
+}
+
+label::after {
+	content: "*";
+	font-size: 18px;
+	margin-left: 2px;
+	color: #b72315;
+}
+
+input,
+button,
+select {
+	display: block;
+	width: 100%;
+	height: 36px;
+}
+
+input,
+select {
+	border: 1px solid var(--input-border-color);
+	border-radius: 6px;
+	padding: 4px 10px;
+}
+
+select {
+	appearance: none;
+	background: url("../assets/down-arrow.svg") right 10px center/14px no-repeat;
+	cursor: pointer;
+}
+
+select,
+option {
+	color: #333;
+}
+
+#gender-select {
+	margin-top: 4px;
+}
+
+#phone-field {
+	display: grid;
+	grid-template-columns: 0.25fr 1fr;
+	column-gap: 12px;
+	margin-top: 4px;
+}
+
+#country-code-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+#flag {
+	position: relative;
+	display: flex;
+	align-items: center;
+	background-color: #f4f5fa;
+	padding: 5px;
+	border: 1px solid var(--input-border-color);
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-right-style: none;
+}
+
+#country-code-select {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	padding: 4px 6px;
+}
+
+.hide-password {
+	position: absolute;
+	top: 55%;
+	right: 10px;
+	cursor: pointer;
+}
+
+#cta-button button:not(:last-child) {
+	margin-bottom: 16px;
+}
+
+button {
+	border: none;
+	outline: none;
+	padding: 7px 22px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+button p {
+	font-weight: 700;
+}
+
+button:not(#google-button) p {
+	width: fit-content;
+	position: relative;
+	margin: 0 auto;
+}
+
+#login-button {
+	background-color: #3ecf4c;
+	color: #fff;
+}
+
+#signup-button {
+	background-color: #e9fde2;
+	color: #3ecf4c;
+}
+
+#welcome-text {
+	text-align: center;
+}
+
+#divider {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	position: relative;
+	margin-bottom: 24px;
+}
+
+#divider::before,
+#divider::after {
+	content: "";
+	top: 60%;
+	position: absolute;
+	width: 100%;
+	border-top: 1px solid #708fac;
+}
+
+#divider span {
+	width: 50px;
+	background-color: #fff;
+	color: #8f8d8d;
+	z-index: 1;
+}
+
+#google-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+}
+
+#google-button img {
+	width: 20px;
+	height: 20px;
+}
+
+#google-button p {
+	margin-left: 8px;
+	color: #4a505c;
+}
+
+#welcome-text h2 {
+	margin-bottom: 10px;
+}
+
+#welcome-text p {
+	color: #333;
+}
+
+#login-form {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.form-input {
+	position: relative;
+}
+
+#forgot-password {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#forgot-password a {
+	text-decoration: none;
+	color: #333;
+}
+
+/* Mobile view */
+@media screen and (max-width: 576px) {
+	body {
+		font-size: 14px;
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+
+	#platform-logo > img {
+		width: 150px;
+		height: 25px;
+	}
+
+	label,
+	button p,
+	input,
+	select {
+		font-size: var(--font-size-mobile);
+	}
+
+	label::after {
+		font-size: 16px;
+	}
+
+	#phone-field {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+	#login-box {
+		position: relative;
+		width: 590px;
+		margin: auto;
+	}
+
+	label::after {
+		font-size: 18px;
+	}
+}
+
+/* Laptop */
+@media screen and (max-height: 926px) {
+	html {
+		overflow-y: auto;
+	}
+
+	#navbar {
+		position: fixed;
+		top: 0;
+		z-index: 999;
+	}
+
+	#content {
+		height: auto;
+	}
+
+	#login-box {
+		width: 590px;
+		margin: 70px auto 24px;
+	}
+}
