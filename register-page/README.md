@@ -1,4 +1,4 @@
-# Home page on various screen widths
+# Register page on various screen widths
 
 | Galaxy 21 Ultra <br />(width > 576px)  | Galaxy Fold 2 <br />(width > 768px) | Macbook Air <br />(width > 1200px) |
 |----------------------------------|-------------------------------|------------------------------|
